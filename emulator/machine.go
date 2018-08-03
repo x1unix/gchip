@@ -10,8 +10,9 @@ func (m *Machine) Test() string {
 }
 
 func CreateMachine() *Machine {
+	mem := newMemory()
 	return &Machine{
-		cpu: *newCpu(),
-		mem: *newMemory(),
+		cpu: *newCpu(mem),
+		mem: *mem,
 	}
 }
